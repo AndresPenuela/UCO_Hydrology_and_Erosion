@@ -1,1 +1,1 @@
-# UCO_Hydrology_and_Erosion
+# UCO Course: Hydrology and Erosion
