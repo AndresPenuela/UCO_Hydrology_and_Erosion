@@ -11,4 +11,3 @@ dependencies:
     - matplotlib
     - seaborn
     - openpyxl
-    - scipy
