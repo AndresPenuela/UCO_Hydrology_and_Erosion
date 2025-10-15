@@ -71,9 +71,9 @@ def GA_interactive_1(soil_type = 'loamy sand'):
     plt.figure(figsize=(15,4)) # to define the plot size
     plt.subplot(1,3,1)
     plt.hlines(0,0,1, color = 'black')
-    for t in range(i+1,T+2):
+    for t in range(i,T+2):
         plt.hlines(-L[t],θ_i,η, color = 'blue',alpha=t/(T+1))
-    plt.hlines(-L[i],θ_i,η, color = 'grey', linestyles='--',label = "wetting front at tp")
+#    plt.hlines(-L[i],θ_i,η, color = 'grey', linestyles='--',label = "wetting front at tp")
     plt.hlines(-L[-1],θ_i,η, color = 'blue', label = "wetting front")
     plt.vlines(η, -L[-1], 0, color = 'blue')
     plt.vlines(θ_i, -10000, 0, color = 'blue', linestyles=':', label = 'initial soil moisture')
@@ -90,13 +90,13 @@ def GA_interactive_1(soil_type = 'loamy sand'):
     plt.subplot(1,3,2)
     plt.plot(t_all,F_all, color = 'red', label = 'cumulative infiltration')
     plt.plot(t_all,E_all, color = 'blue', label = 'cumulative runoff')
-    plt.vlines(t_p, 0, 1000, linestyles='--', color = 'gray', label = 'ponding time = %.3f h' % t_p)
+#    plt.vlines(t_p, 0, 1000, linestyles='--', color = 'gray', label = 'ponding time = %.3f h' % t_p)
     plt.xlim([0,T])
     plt.ylim([0,F_all[-1]*1.1])
     plt.xlabel('hours')
     plt.ylabel('mm')
     plt.ylim([0,1000])
-    plt.title('Cumulative infiltration')
+    plt.title('Cumulative infiltration & Runoff')
     plt.legend(loc = 'upper right')
     
     # Plot instant infiltration vs runoff
@@ -104,7 +104,7 @@ def GA_interactive_1(soil_type = 'loamy sand'):
     plt.hlines(r,0,T, color = 'lightblue', label = 'rainfall rate')
     plt.plot(t_all,f_all, color = 'red', label = 'infiltration rate')
     plt.plot(t_all,e_all, color = 'blue', label = 'runoff rate')
-    plt.vlines(t_p, 0, r*1.1, linestyles='--', color = 'gray', label = 'ponding time = %.3f h' % t_p)
+#    plt.vlines(t_p, 0, r*1.1, linestyles='--', color = 'gray', label = 'ponding time = %.3f h' % t_p)
     plt.xlim([0,T])
     plt.ylim([0,r*1.1])
     plt.xlabel('hours')
@@ -168,9 +168,9 @@ def GA_interactive_2(p1 = 0.5, p2 = 60, p3 = 0.38):
     # Plot wetting front diagram
     plt.figure(figsize=(15,4)) # to define the plot size
     plt.subplot(1,3,1)
-    for t in range(i+1,T+2):
+    for t in range(i,T+2):
         plt.hlines(-L[t],θ_i,p3, color = 'blue',alpha=t/(T+1))
-    plt.hlines(-L[i],θ_i,p3, color = 'grey', linestyles='--',label = "wetting front at tp")
+#    plt.hlines(-L[i],θ_i,p3, color = 'grey', linestyles='--',label = "wetting front at tp")
     plt.hlines(-L[-1],θ_i,p3, color = 'blue', label = "wetting front")
     plt.vlines(p3, -L[-1], 0, color = 'blue')
     plt.vlines(θ_i, -10000, 0, color = 'grey', linestyles=':', label = 'initial soil moisture')
@@ -186,12 +186,12 @@ def GA_interactive_2(p1 = 0.5, p2 = 60, p3 = 0.38):
     plt.subplot(1,3,2)
     plt.plot(t_all,F_all, color = 'red', label = 'cumulative infiltration')
     plt.plot(t_all,E_all, color = 'blue', label = 'cumulative runoff')
-    plt.vlines(t_p, 0, 1000, linestyles=':', color = 'gray', label = 'ponding time tp = %.3f h' % t_p)
+#    plt.vlines(t_p, 0, 1000, linestyles=':', color = 'gray', label = 'ponding time tp = %.3f h' % t_p)
     plt.xlim([0,T])
     plt.ylim([0,1000])
     plt.xlabel('hours')
     plt.ylabel('mm')
-    plt.title('Cumulative infiltration')
+    plt.title('Cumulative infiltration & Runoff')
     plt.legend()
     
     # Plot instant infiltration vs runoff
@@ -199,7 +199,7 @@ def GA_interactive_2(p1 = 0.5, p2 = 60, p3 = 0.38):
     plt.hlines(r,0,T, color = 'lightblue', label = 'rainfall rate')
     plt.plot(t_all,f_all, color = 'red', label = 'infiltration rate')
     plt.plot(t_all,e_all, color = 'blue', label = 'runoff rate')
-    plt.vlines(t_p, 0, r*1.1, linestyles=':', color = 'gray', label = 'ponding time tp = %.3f h' % t_p)
+#    plt.vlines(t_p, 0, r*1.1, linestyles=':', color = 'gray', label = 'ponding time tp = %.3f h' % t_p)
     plt.xlim([0,T])
     plt.ylim([0,r*1.1])
     plt.xlabel('hours')
